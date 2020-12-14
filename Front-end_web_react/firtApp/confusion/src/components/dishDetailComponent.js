@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {Card, CardImg,CardImgOverlay,CardText,CardBody, CardTitle} from 'reactstrap';
-
+import {Card, CardImg,CardImgOverlay,CardText,CardBody, CardTitle,BreadcrumbItem,Breadcrumb} from 'reactstrap';
+import {Link} from 'react-router-dom';
 class DishDetail extends Component{
 
 constructor(props){
@@ -48,24 +48,40 @@ constructor(props){
     render() {
 
         console.log('dish detail is called');
-        if(this.props.selectedDish==null){
+        if(this.props.dish==null){
         return (
             <div>  </div>
         )
         }
         else{
-            const dish = this.props.selectedDish;
+            const dish = this.props.dish;
         return (
-        
-        <div className ="row">
-            <div className="col-12 col-md-5 m-1">
-            {this.renderDish(dish)}
+        <div className="container">
+
+            <div className="row">
+                <Breadcrumb>
+                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                    <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+                </Breadcrumb>
             </div>
-            <div className="col-12 col-md-5 m-1">
-                <h4>
-                    Comments
-                </h4>
-                {this.renderComments(dish.comments)}
+            <div className="row">
+                <div className="col-12">
+
+                    <h3>{this.props.dish.name}</h3>
+                </div>
+
+            </div>
+            <div className ="row">
+                <div className="col-12 col-md-5 m-1">
+                {this.renderDish(dish)}
+                </div>
+                <div className="col-12 col-md-5 m-1">
+                    <h4>
+                        Comments
+                    </h4>
+                    {this.renderComments(this.props.comments)}
+                </div>
             </div>
         </div>
         )
