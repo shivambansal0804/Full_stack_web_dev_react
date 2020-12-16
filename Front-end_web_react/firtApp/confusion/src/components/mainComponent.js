@@ -10,6 +10,7 @@ import {DISHES} from '../shared/dishes';
 import {COMMENTS} from '../shared/comments';
 import {PROMOTIONS} from '../shared/promotions';
 import {LEADERS} from '../shared/leaders';
+import AdminLogin from './adminLoginComponent';
 import {Switch,Redirect,Route} from 'react-router-dom';
 import Home from './homeComponent';
 
@@ -44,6 +45,7 @@ class Main extends Component {
         <Route exact path="/menu" component={()=> <Menu dishes={this.state.dishes}/>}/>
         <Route path = "/menu/:dishId" component={({match})=> <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} comments={this.state.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} /> }/>
         <Route exact path="/contactus" component={()=> <Contact/>}></Route>
+        <Route exact path="/adminlogin" component={()=> <AdminLogin/>}></Route>
         <Redirect to="/home" />
 
       </Switch>

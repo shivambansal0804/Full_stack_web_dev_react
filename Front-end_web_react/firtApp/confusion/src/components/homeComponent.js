@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card , CardImg,CardBody,CardText,CardSubtitle,CardTitle} from 'reactstrap';
+import {Card , CardImg,CardBody,CardText,CardSubtitle,CardTitle,Jumbotron} from 'reactstrap';
 
 function RenderCard({item}){
 
@@ -20,6 +20,16 @@ function Home(props){
     return(
 
         <div className="container">
+           <Jumbotron>
+              <div className="container">
+                  <div className="row row-header">
+                      <div className="col-12 col-sm-6">
+                          <h1>Ristorante con Fusion</h1>
+                          <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                      </div>
+                  </div>
+              </div>
+          </Jumbotron>
             <div className="row align-items-start">
                 <div className="col-12 col-md m-1">
                     <RenderCard item={props.dish} />
