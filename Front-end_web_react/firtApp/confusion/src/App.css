@@ -11,23 +11,24 @@
 }
 
 .footer {
-  background-color: #e9dfc4;
+  background-color: #252525;
   margin: 0px auto;
   padding: 20px 0px 20px 0px;
+  color: floralwhite;
 }
 .jumbotron {
   padding: 70px 30px 70px 30px;
   margin: 0px auto;
-  background: #c7cd75;
+  background: #252525;
   color: floralwhite;
 }
 
 address {
   font-size: 80%;
   margin: 0px;
-  color: #0f0f0f;
+  color: #585858;
 }
 
 .navbar-dark {
-  background-color: #8c8d67;
+  background-color: #1f1f1f;
 }

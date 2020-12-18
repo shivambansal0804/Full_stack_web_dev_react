@@ -2,7 +2,7 @@ import React from 'react'
 import { signin, signInWithGoogle, signInWithGitHub } from "../helpers/auth";
 import { auth } from "../firebaseHelp";
 import { db } from "../firebaseHelp";
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import { Form, FormGroup, Label, Input, Button, Jumbotron } from 'reactstrap'
 class AddDish extends React.Component {
 
   constructor(props) {
@@ -156,9 +156,13 @@ class AdminLogin extends React.Component {
         </div>
       )
     else return (
-      <button className="btn btn-danger mr-2" type="button" onClick={this.googleSignIn}>
-        Sign in with Google
-      </button>
+      <div className="m-5">
+        <Jumbotron>
+          <button className="btn btn-danger mr-2" type="button" onClick={this.googleSignIn}>
+            Sign in with Google
+          </button>
+        </Jumbotron>
+      </div>
     );
   }
 }
